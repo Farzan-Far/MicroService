@@ -1,20 +1,18 @@
 package com.Farzan.client.DataModels;
 
 
+import com.Farzan.client.Domain.Country;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+
 public class Request
 {
     private String name;
     private String family;
     private String nationalID;
     private String email;
-
-    public Request(String name, String family, String nationalID, String email)
-    {
-        this.name = name;
-        this.family = family;
-        this.nationalID = nationalID;
-        this.email = email;
-    }
+    @Enumerated(EnumType.STRING)
+    private Country country;
 
     @Override
     public String toString() {
@@ -23,7 +21,16 @@ public class Request
                 ", family='" + family + '\'' +
                 ", nationalID='" + nationalID + '\'' +
                 ", email='" + email + '\'' +
+                ", country=" + country +
                 '}';
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
     }
 
     public String getName() {

@@ -1,31 +1,30 @@
 package com.Farzan.client.Service;
 
+import com.Farzan.client.Config.ClientConfig;
 import com.Farzan.client.DataModels.Request;
 import com.Farzan.client.DataModels.Response;
+import com.Farzan.client.DataModels.checkResponse;
 import com.Farzan.client.Domain.Client;
 import com.Farzan.client.Repository.Repo;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.lang.module.ResolutionException;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class ClientServiceImpl implements ClientService
 {
     private final Repo repository;
-    @Autowired
-    public ClientServiceImpl(Repo repository)
-    {
-        this.repository = repository;
-    }
+    private final RestTemplate config;
 
     @Override
     public Response createClient(Request request)
     {
-
         Client client = new Client();
 
         client.setName(request.getName());
@@ -34,7 +33,16 @@ public class ClientServiceImpl implements ClientService
         client.setEmail(request.getEmail());
         client.setCountry(request.getCountry());
 
-        repository.save(client);
+        repository.saveAndFlush(client);
+
+        checkResponse response = config.getForObject("http://localhost:8081/api/v1/check/{id}",
+                checkResponse.class,
+                client.getNationalID()
+        );
+        if (response.isFraudster())
+        {
+            return new Response("fraudster");
+        }
 
         return new Response("New Client has been Registered");
     }

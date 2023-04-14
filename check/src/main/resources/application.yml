@@ -1,15 +1,15 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
-    name: client
+    name: check
   datasource:
+    url: jdbc:postgresql://localhost:5432/check
     password: password
-    url: jdbc:postgresql://localhost:5432/client
     username: Farzan
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect

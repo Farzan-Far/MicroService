@@ -39,6 +39,7 @@ public class ClientServiceImpl implements ClientService
                 checkResponse.class,
                 client.getNationalID()
         );
+        assert response != null;
         if (response.isFraudster())
         {
             return new Response("fraudster");

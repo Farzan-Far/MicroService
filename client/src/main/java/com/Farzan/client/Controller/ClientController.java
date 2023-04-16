@@ -5,6 +5,7 @@ import com.Farzan.client.DataModels.Response;
 import com.Farzan.client.Domain.Client;
 import com.Farzan.client.Service.ClientServiceImpl;
 import com.sun.jdi.InternalException;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,14 +19,10 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/client")
 @Slf4j
+@AllArgsConstructor
 public class ClientController
 {
     private final ClientServiceImpl service ;
-    @Autowired
-    public ClientController(ClientServiceImpl service)
-    {
-        this.service = service;
-    }
 
     @PostMapping("/add")
     public ResponseEntity<Response> creat(@RequestBody Request request) throws Exception

@@ -1,13 +1,11 @@
 package com.Farzan.client.Service;
 
-import com.Farzan.client.Config.ClientConfig;
 import com.Farzan.client.DataModels.Request;
 import com.Farzan.client.DataModels.Response;
 import com.Farzan.client.DataModels.checkResponse;
 import com.Farzan.client.Domain.Client;
 import com.Farzan.client.Repository.Repo;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -35,7 +33,7 @@ public class ClientServiceImpl implements ClientService
 
         repository.saveAndFlush(client);
 
-        checkResponse response = config.getForObject("http://localhost:8081/api/v1/check/{id}",
+        checkResponse response = config.getForObject("http://CHECK/api/v1/check/{id}",
                 checkResponse.class,
                 client.getNationalID()
         );

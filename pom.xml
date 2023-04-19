@@ -14,7 +14,8 @@
 
   <modules>
     <module>client</module>
-      <module>check</module>
+    <module>check</module>
+    <module>eureka-server</module>
   </modules>
 
   <properties>
@@ -23,10 +24,12 @@
     <maven.compiler.target>17</maven.compiler.target>
     <spring.boot.maven.plugin.version>3.0.5</spring.boot.maven.plugin.version>
     <spring.boot.dependencies.version>3.0.5</spring.boot.dependencies.version>
+    <spring.cloud-version>2022.0.2</spring.cloud-version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
+
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
@@ -34,6 +37,15 @@
         <scope>import</scope>
         <type>pom</type>
       </dependency>
+
+      <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-dependencies</artifactId>
+      <version>${spring.cloud-version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+
     </dependencies>
   </dependencyManagement>
 
@@ -47,6 +59,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
     </dependency>
+
   </dependencies>
 
   <build>

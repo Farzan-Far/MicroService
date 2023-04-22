@@ -2,9 +2,10 @@ package com.Farzan.client.Service;
 
 import com.Farzan.client.DataModels.Request;
 import com.Farzan.client.DataModels.Response;
-import com.Farzan.client.DataModels.checkResponse;
 import com.Farzan.client.Domain.Client;
 import com.Farzan.client.Repository.Repo;
+import com.java.farzan.check.CheckCustomer;
+import com.java.farzan.check.checkResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -18,7 +19,8 @@ import java.util.Optional;
 public class ClientServiceImpl implements ClientService
 {
     private final Repo repository;
-    private final RestTemplate config;
+//  private final RestTemplate config; remove the restTemplate methode for internal connection
+    private final CheckCustomer checkCustomer;
 
     @Override
     public Response createClient(Request request)
@@ -33,10 +35,7 @@ public class ClientServiceImpl implements ClientService
 
         repository.saveAndFlush(client);
 
-        checkResponse response = config.getForObject("http://CHECK/api/v1/check/{id}",
-                checkResponse.class,
-                client.getNationalID()
-        );
+        checkResponse response = checkCustomer.check(client.getNationalID());
         assert response != null;
         if (response.isFraudster())
         {

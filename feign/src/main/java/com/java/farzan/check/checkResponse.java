@@ -1,4 +1,4 @@
-package com.java.farzan.Response;
+package com.java.farzan.check;
 
 public record checkResponse(Boolean isFraudster)
 {

@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.FeignAutoConfiguration;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients(basePackages = "com.java.farzan.check")
-//@ImportAutoConfiguration({FeignAutoConfiguration.class, HttpClientConfiguration.class})
+@ImportAutoConfiguration({FeignAutoConfiguration.class, HttpClientConfiguration.class})
 public class ClientApplication
 {
     public static void main(String[] args)

@@ -1,7 +1,6 @@
 package com.Farzan.client.Domain;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 @Entity
 public class Client
 {

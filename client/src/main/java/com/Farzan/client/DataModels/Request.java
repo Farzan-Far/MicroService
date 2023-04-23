@@ -2,9 +2,9 @@ package com.Farzan.client.DataModels;
 
 
 import com.Farzan.client.Domain.Country;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-
+//import jakarta.persistence.EnumType;
+//import jakarta.persistence.Enumerated;
+import javax.persistence.*;
 public class Request
 {
     private String name;

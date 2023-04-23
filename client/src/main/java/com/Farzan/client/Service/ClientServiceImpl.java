@@ -8,7 +8,7 @@ import com.java.farzan.check.CheckCustomer;
 import com.java.farzan.check.checkResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+
 
 import java.lang.module.ResolutionException;
 import java.util.List;
@@ -19,7 +19,6 @@ import java.util.Optional;
 public class ClientServiceImpl implements ClientService
 {
     private final Repo repository;
-//  private final RestTemplate config; remove the restTemplate methode for internal connection
     private final CheckCustomer checkCustomer;
 
     @Override

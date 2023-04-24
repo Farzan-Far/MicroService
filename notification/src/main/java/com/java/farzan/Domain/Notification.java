@@ -1,18 +1,17 @@
 package com.java.farzan.Domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Data
 @Builder
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
+@ToString
 public class Notification
 {
     @Id
@@ -24,7 +23,7 @@ public class Notification
             strategy = GenerationType.SEQUENCE,
             generator = "notification_id_sequence"
     )
-    private Integer notificationId;
+//    private Integer notificationId;
     private String toClientNationalId;
     private String toClientEmail;
     private String toClientCountry;

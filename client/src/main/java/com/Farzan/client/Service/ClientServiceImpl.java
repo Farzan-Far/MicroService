@@ -6,6 +6,8 @@ import com.Farzan.client.Domain.Client;
 import com.Farzan.client.Repository.Repo;
 import com.java.farzan.check.CheckCustomer;
 import com.java.farzan.check.checkResponse;
+import com.java.farzan.notification.NotificationClient;
+import com.java.farzan.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,7 @@ public class ClientServiceImpl implements ClientService
 {
     private final Repo repository;
     private final CheckCustomer checkCustomer;
+    private final NotificationClient notificationClient;
 
     @Override
     public Response createClient(Request request)
@@ -40,6 +43,15 @@ public class ClientServiceImpl implements ClientService
         {
             return new Response("fraudster");
         }
+
+        notificationClient.sendNotification(
+                new NotificationRequest(
+                        client.getNationalID(),
+                        client.getEmail(),
+                        client.getCountry(),
+                        String.format("Hi %s Welcome to Microservices", client.getName())
+                )
+        );
 
         return new Response("New Client has been Registered");
     }

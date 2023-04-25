@@ -48,7 +48,7 @@ public class ClientServiceImpl implements ClientService
                 new NotificationRequest(
                         client.getNationalID(),
                         client.getEmail(),
-                        client.getCountry(),
+//                        client.getCountry(), todo: later add this value to the table
                         String.format("Hi %s Welcome to Microservices", client.getName())
                 )
         );

@@ -3,6 +3,7 @@ package com.java.farzan;
 
 import lombok.AllArgsConstructor;
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
@@ -24,6 +25,18 @@ public class RabbitMQConfig
 
         return rabbitTemplate;
     }
+
+    @Bean
+    public SimpleRabbitListenerContainerFactory simpleRabbitListenerContainerFactory()
+    {
+        SimpleRabbitListenerContainerFactory containerFactory = new SimpleRabbitListenerContainerFactory();
+        containerFactory.setConnectionFactory(factory);
+        containerFactory.setMessageConverter(JacksonConverter());
+
+        return containerFactory;
+    }
+
+
     @Bean
     public MessageConverter JacksonConverter()
     {

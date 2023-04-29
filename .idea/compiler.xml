@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="client" />
         <module name="notification" />
+        <module name="apigw" />
         <module name="check" />
         <module name="openFeign" />
         <module name="eureka-server" />

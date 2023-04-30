@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(
         scanBasePackages = {
-                "com.java.farzan.notification",
+                "com.java.farzan",
                 "com.java.amqp"
         })
 public class NotificationApplication 

@@ -54,7 +54,7 @@ public class ClientServiceImpl implements ClientService
         );
         messageProducer.publish(
                 notificationRequest,
-                "internal.exchange",
+                "internal.exchanges",
                 "internal.notification.routing-key"
         );
 

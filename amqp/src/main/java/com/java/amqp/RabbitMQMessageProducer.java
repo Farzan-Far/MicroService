@@ -17,5 +17,4 @@ public class RabbitMQMessageProducer
         amqpTemplate.convertAndSend(exchange,routingKey,payload);
         log.info("published to {} using routingKey {}. Payload: {}",exchange,routingKey,payload);
     }
-
 }

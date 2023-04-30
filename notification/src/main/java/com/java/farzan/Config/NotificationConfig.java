@@ -38,7 +38,7 @@ public class NotificationConfig
         return BindingBuilder
                 .bind(notificationQueue())
                 .to(topicExchange())
-                .with(internalNotificationRoutingKey);
+                .with(this.internalNotificationRoutingKey);
     }
 
     public String getInternalExchange() {

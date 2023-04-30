@@ -8,16 +8,16 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
 @Slf4j
+@AllArgsConstructor
 public class NotificationConsumer
 {
     private final NotificationService service;
 
     @RabbitListener(queues = "${rabbitmq.queue.notification}")
-    public void consume(NotificationRequest request)
+    public void consume(NotificationRequest notificationRequest)
     {
-        log.info("Consumed {} from queue", request);
-        service.sendNotification(request);
+        log.info("Consumed {} from queue", notificationRequest);
+        service.sendNotification(notificationRequest);
     }
 }

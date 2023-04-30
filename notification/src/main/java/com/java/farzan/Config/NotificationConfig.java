@@ -40,16 +40,4 @@ public class NotificationConfig
                 .to(topicExchange())
                 .with(this.internalNotificationRoutingKey);
     }
-
-    public String getInternalExchange() {
-        return internalExchange;
-    }
-
-    public String getNotificationQueue() {
-        return notificationQueue;
-    }
-
-    public String getInternalNotificationRoutingKey() {
-        return internalNotificationRoutingKey;
-    }
 }

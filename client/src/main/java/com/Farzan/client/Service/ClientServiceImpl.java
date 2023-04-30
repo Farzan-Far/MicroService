@@ -7,7 +7,6 @@ import com.Farzan.client.Repository.Repo;
 import com.java.amqp.RabbitMQMessageProducer;
 import com.java.farzan.check.CheckCustomer;
 import com.java.farzan.check.checkResponse;
-import com.java.farzan.notification.NotificationClient;
 import com.java.farzan.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,6 @@ public class ClientServiceImpl implements ClientService
 {
     private final Repo repository;
     private final CheckCustomer checkCustomer;
-//    private final NotificationClient notificationClient;
     private final RabbitMQMessageProducer messageProducer;
 
     @Override

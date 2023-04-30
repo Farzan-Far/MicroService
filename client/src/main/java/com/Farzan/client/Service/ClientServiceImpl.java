@@ -4,6 +4,7 @@ import com.Farzan.client.DataModels.Request;
 import com.Farzan.client.DataModels.Response;
 import com.Farzan.client.Domain.Client;
 import com.Farzan.client.Repository.Repo;
+import com.java.amqp.RabbitMQMessageProducer;
 import com.java.farzan.check.CheckCustomer;
 import com.java.farzan.check.checkResponse;
 import com.java.farzan.notification.NotificationClient;
@@ -22,7 +23,8 @@ public class ClientServiceImpl implements ClientService
 {
     private final Repo repository;
     private final CheckCustomer checkCustomer;
-    private final NotificationClient notificationClient;
+//    private final NotificationClient notificationClient;
+    private final RabbitMQMessageProducer messageProducer;
 
     @Override
     public Response createClient(Request request)
@@ -44,13 +46,18 @@ public class ClientServiceImpl implements ClientService
             return new Response("fraudster");
         }
 
-        notificationClient.sendNotification(
+        NotificationRequest notificationRequest= (
                 new NotificationRequest(
                         client.getNationalID(),
                         client.getEmail(),
 //                        client.getCountry(), todo: later add this value to the table
                         String.format("Hi %s Welcome to Microservices", client.getName())
                 )
+        );
+        messageProducer.publish(
+                notificationRequest,
+                "internal.exchange",
+                "internal.notification.routing-key"
         );
 
         return new Response("New Client has been Registered");

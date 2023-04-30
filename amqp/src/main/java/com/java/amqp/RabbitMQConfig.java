@@ -1,4 +1,4 @@
-package com.java.farzan;
+package com.java.amqp;
 
 
 import lombok.AllArgsConstructor;
@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig
 {
     private final ConnectionFactory factory;
-
     @Bean
     public AmqpTemplate amqpTemplate()
     {
@@ -25,7 +24,6 @@ public class RabbitMQConfig
 
         return rabbitTemplate;
     }
-
     @Bean
     public SimpleRabbitListenerContainerFactory simpleRabbitListenerContainerFactory()
     {
@@ -35,8 +33,6 @@ public class RabbitMQConfig
 
         return containerFactory;
     }
-
-
     @Bean
     public MessageConverter JacksonConverter()
     {

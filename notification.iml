@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/amqp/src/main/java/com/java/amqp/RabbitMQConfig.java</file>
+          <file>file://$MODULE_DIR$/notification/src/main/java/com/java/farzan/NotificationApplication.java</file>
+          <file>file://$MODULE_DIR$/notification/src/main/java/com/java/farzan/Config/NotificationConfig.java</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+</module>

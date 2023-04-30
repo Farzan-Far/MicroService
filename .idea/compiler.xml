@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="client" />
         <module name="notification" />
         <module name="apigw" />
-        <module name="check" />
         <module name="openFeign" />
+        <module name="amqp" />
+        <module name="client" />
+        <module name="check" />
         <module name="eureka-server" />
       </profile>
     </annotationProcessing>

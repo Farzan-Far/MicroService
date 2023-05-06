@@ -12,4 +12,6 @@ public class ApiGWApplication
     {
         SpringApplication.run(ApiGWApplication.class,args);
     }
+
+    // TODO: 06/05/2023  complete the application.yml with the UPDATE DELETE FIND and....
 }

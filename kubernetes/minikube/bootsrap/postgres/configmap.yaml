@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgresConfig
+data:
+  POSTGRES_DB: microservice
+  POSTGRES_USERNAME: Farzan
+  POSTGRES_PASSWORD: password

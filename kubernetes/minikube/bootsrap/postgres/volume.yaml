@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: postgres-pc-volume
+  name: postgres-pc-volume-2
   labels:
     type: local
-    app: postgres
+    app: postgres2
 spec:
   storageClassName: manual
   capacity:
@@ -17,9 +17,9 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: postgres-pc-volume-claim
+  name: postgres-pc-volume-claim-2
   labels:
-    app: postgres
+    app: postgres2
 spec:
   storageClassName: manual
   accessModes:

@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: postgres
+  name: postgres2
   labels:
-    app: postgres
+    app: postgres2
 spec:
-  serviceName: postgres
+  serviceName: postgres2
   replicas: 1
   selector:
     matchLabels:
-      app: postgres
+      app: postgres2
   template:
     metadata:
-      name: postgres
+      name: postgres2
       labels:
-        app: postgres
+        app: postgres2
     spec:
       volumes:
-        - name: postgres
+        - name: postgres2
           persistentVolumeClaim:
-            claimName: postgres-pc-volume-claim
+            claimName: postgres-pc-volume-claim-2
       containers:
-        - name: postgres
+        - name: postgres2
           image: postgres
           imagePullPolicy: IfNotPresent
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
-              name: postgres
+              name: postgres2
           envFrom:
             - configMapRef:
-                name: postgresConfig
+                name: postgres-config
           resources:
             requests:
               cpu: 100m

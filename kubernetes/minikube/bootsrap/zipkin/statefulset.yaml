@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: zipkin2
+  labels:
+    app: zipkin2
+spec:
+  serviceName: zipkin2
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zipkin2
+  template:
+    metadata:
+      name: zipkin2
+      labels:
+        app: zipkin2
+    spec:
+      containers:
+        - name: zipkin2
+          image: openzipkin/zipkin
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9411
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
+      restartPolicy: Always

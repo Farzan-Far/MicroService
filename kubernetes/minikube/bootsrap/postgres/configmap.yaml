@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: postgres-config
 data:
-  POSTGRES_DB: microservice
-  POSTGRES_USERNAME: Farzan
-  POSTGRES_PASSWORD: password
+  POSTGRES_DB: "microservice"
+  POSTGRES_USERNAME: "Farzan"
+  POSTGRES_PASSWORD: "password"

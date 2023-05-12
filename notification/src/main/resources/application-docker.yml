@@ -28,6 +28,7 @@ eureka:
       defaultZone: http://eureka-server2:8761/eureka
     fetch-registry: true
     register-with-eureka: true
+    enabled: false
 
 rabbitmq:
     exchanges:

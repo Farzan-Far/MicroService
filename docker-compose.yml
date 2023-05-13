@@ -46,30 +46,30 @@ services:
     networks:
       - spring
 
-  eureka-server:
-    image: farzanfarzan/eureka-server:new
-    container_name: eureka-server2
-    ports:
-      - "8761:8761"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-    depends_on:
-      - zipkin
-
-  apigw:
-    image: farzanfarzan/apigw:new
-    container_name: apigw2
-    ports:
-      - "8086:8086"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-    depends_on:
-      - zipkin
-      - eureka-server
+#  eureka-server:
+#    image: farzanfarzan/eureka-server:new
+#    container_name: eureka-server2
+#    ports:
+#      - "8761:8761"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#    depends_on:
+#      - zipkin
+#
+#  apigw:
+#    image: farzanfarzan/apigw:new
+#    container_name: apigw2
+#    ports:
+#      - "8086:8086"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#    depends_on:
+#      - zipkin
+#      - eureka-server
 
   client:
     image: farzanfarzan/client:new
@@ -85,7 +85,6 @@ services:
       - zipkin
       - postgres
       - rabbitmq
-      - eureka-server
 
   check:
     image: farzanfarzan/check:new
@@ -101,7 +100,6 @@ services:
       - zipkin
       - postgres
       - rabbitmq
-      - eureka-server
 
   notification:
     image: farzanfarzan/notification:new
@@ -117,7 +115,6 @@ services:
       - zipkin
       - postgres
       - rabbitmq
-      - eureka-server
 
 networks:
   postgres:

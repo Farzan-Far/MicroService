@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: check
+  zipkin:
+    base-url: http://zipkin2:9411
+  datasource:
+    password: password
+    url: jdbc:postgresql://postgres2:5432/check
+    username: Farzan
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server2:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+    enabled: false

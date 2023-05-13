@@ -9,11 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="notification" />
         <module name="apigw" />
-        <module name="openFeign" />
         <module name="amqp" />
         <module name="client" />
         <module name="check" />
         <module name="eureka-server" />
+        <module name="feign" />
       </profile>
     </annotationProcessing>
   </component>

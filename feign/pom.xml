@@ -10,6 +10,6 @@
     </parent>
 
     <packaging>jar</packaging>
-    <artifactId>openFeign</artifactId>
+    <artifactId>feign</artifactId>
 
 </project>

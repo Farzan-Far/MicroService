@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
         name = "check",
-        url = "")
+        url = "${feign.check.url}")
 public interface CheckCustomer
 {
     @GetMapping("api/v1/check/{id}")

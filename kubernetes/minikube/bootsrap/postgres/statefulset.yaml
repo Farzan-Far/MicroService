@@ -25,7 +25,7 @@ spec:
           image: postgres
           imagePullPolicy: IfNotPresent
           volumeMounts:
-            - mountPath: /var/lib/postgresql/data
+            - mountPath: "/var/lib/postgresql/data"
               name: postgres2
           envFrom:
             - configMapRef:

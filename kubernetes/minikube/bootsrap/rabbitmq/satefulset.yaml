@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: rabbitmq2
-  labels:
-    app: rabbitmq2
 spec:
   serviceName: rabbitmq2
   replicas: 1

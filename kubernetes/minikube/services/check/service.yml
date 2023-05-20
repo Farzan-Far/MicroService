@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: check
+spec:
+  selector:
+    app: check
+  ports:
+    -  port: 80
+       targetPort: 8081
+  type: NodePort

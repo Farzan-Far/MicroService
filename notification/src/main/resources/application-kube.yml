@@ -11,7 +11,7 @@ spring:
 
   datasource:
     password: password
-    url: jdbc:postgresql://postgres2:5432/notification
+    url: jdbc:postgresql://postgres:5432/notification
     username: Farzan
   jpa:
     hibernate:

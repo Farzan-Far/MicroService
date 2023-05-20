@@ -7,7 +7,7 @@ spring:
     base-url: http://zipkin2:9411
   datasource:
     password: password
-    url: jdbc:postgresql://postgres2:5432/check
+    url: jdbc:postgresql://postgres:5432/check
     username: Farzan
   jpa:
     hibernate:

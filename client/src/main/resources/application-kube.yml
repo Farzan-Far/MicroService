@@ -12,7 +12,7 @@ spring:
 
   datasource:
     password: password
-    url: jdbc:postgresql://postgres2:5432/client
+    url: jdbc:postgresql://postgres:5432/client
     username: Farzan
   jpa:
     hibernate:

@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: rabbitmq2
+  name: rabbitmq
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
@@ -22,7 +22,7 @@ metadata:
   name: rabbitmq-peer-discovery-rbac
 subjects:
   - kind: ServiceAccount
-    name: rabbitmq2
+    name: rabbitmq
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role

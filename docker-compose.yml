@@ -1,6 +1,6 @@
 services:
   postgres:
-    container_name: postgres2
+    container_name: postgres
     image: postgres
     environment:
       POSTGRES_USER: Farzan
@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
 
   pgadmin:
-    container_name: pgadmin2
+    container_name: pgadmin
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
@@ -38,7 +38,7 @@ services:
       - spring
 
   rabbitmq:
-    image: rabbitmq:3.9-management-alpine
+    image: rabbitmq:3.9.11-management-alpine
     container_name: rabbitmq2
     ports:
       - "5672:5672"

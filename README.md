@@ -38,9 +38,8 @@ Docker (Docker Compose)
 Kubernetes (Minikube)
 
 
-## Screenshots
-
-/home/farzan/Pictures/Screenshots/Screenshot from 2023-05-20 22-46-38.png
+## Screenshote
+![Screenshot from 2023-05-20 22-46-38](https://github.com/Farzan-Far/MicroService/assets/74488136/c9224e48-b709-497d-acdb-57b27ed57c9e)
 
 
 ### Quick overview

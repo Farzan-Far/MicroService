@@ -29,7 +29,7 @@ Jib plugin
 
 ApiGW
 
-Service discovery(Eureka-Server)
+Service discovery (Eureka-Server)
 
 Advanced Message Queuing Protocol (AMQP)
 

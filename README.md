@@ -35,14 +35,14 @@ Advanced Message Queuing Protocol (AMQP)
 
 Docker (Docker Compose)
 
-Kubernetes (Minikube)
+container orchestration engine (Kubernetes)
 
 ## Features
 
 - Complete and real CRUD API
 - it can run locally, with docker, and in Kubernetes cluster
 - Micro Service Architecture
-- lightweight API
+- Docker for containerization and deployment
 
 
 ## Screenshote

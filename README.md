@@ -40,22 +40,22 @@ container orchestration engine (Kubernetes)
 ## Features
 
 - Complete and real CRUD API
-- it can run locally, with docker, and in Kubernetes cluster
+- it can run locally, with Docker, and in the Kubernetes cluster
 - Micro Service Architecture
 - Docker for containerization and deployment
 
 
-## Screenshote
+## Screenshot
 ![Screenshot from 2023-05-20 22-46-38](https://github.com/Farzan-Far/MicroService/assets/74488136/c9224e48-b709-497d-acdb-57b27ed57c9e)
 
 
-### Quick overview
+### Quick Overview
 
-it has three main services and one message queue 
-the Client is the main service here 
+It has three main services and one message queue 
+The client is the main service here 
 The Client talks to the Check service and the response goes to the queue and then published to the Notification Service.
 Each Service has a database that is built into the Docker
-also, RabbitMQ and Zipkin are handled by Docker.
+Also, RabbitMQ and Zipkin are handled by Docker.
 
 
 
